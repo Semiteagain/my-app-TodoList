@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Heading from "./component/Heading";
+import LearningRedux from "./component/LearningRedux";
 import ListEvent from "./component/ListEvent";
 import TestList from "./component/TestList";
 
@@ -31,6 +32,8 @@ function App() {
           <ListEvent key={index} id={index} title={prevDetails.title} content={prevDetails.content} deleteItem={onDelete} />
         );
       })}
+
+       <LearningRedux />
     </div>
   );
 }
