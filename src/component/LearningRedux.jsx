@@ -1,32 +1,34 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState,useEffect } from 'react'
 
 function LearningRedux() {
 
    const [post, setPost ] = useState([])
 //    'https://jsonplaceholder.typicode.com/posts'
-    useEffect(() =>{
-      fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(res => res.json())
-      .then(data => setPost({post : data}))
-    })
-    
+
+      useEffect(() => {
+          fetch('https://jsonplaceholder.typicode.com/posts')
+          .then(res => res.json())
+          .then(data => setPost(data))
+         
+      }, [])
 
 
-    function handleChange(params) {
-        post.map(newPost =>{
-            <div key={newPost.id}>
-                <h3>{newPost.title}</h3>
-                <p>{newPost.body}</p>
-
-            </div>
-        })
-    }
     return (
         <div>
             <h1>Fuction testing</h1>
-          {handleChange}
+         
+           {post.map(item => {
+               return <div key={item.id}>
+                   <h3>{item.title}</h3>
+                   <p>{item.body}</p>
+                   </div>
+           })}
+        
         </div>
     )
-}
+
+    }
+   
+
 
 export default LearningRedux
