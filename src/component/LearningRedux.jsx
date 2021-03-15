@@ -16,13 +16,13 @@ function LearningRedux() {
     return (
         <div>
             <h1>Fuction testing</h1>
-         
-           {post.map(item => {
-               return <div key={item.id}>
-                   <h3>{item.title}</h3>
+         {post.map(item =>{
+           return <div key={item.id}>
+                   <h1>{item.title}</h1>
                    <p>{item.body}</p>
-                   </div>
-           })}
+             </div>
+         })}
+    
         
         </div>
     )
